@@ -1,0 +1,55 @@
+h1 {
+  text-align: center;
+  display: block;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+h3 {
+  text-align: right;
+  display: block;
+}
+hr {
+  display: inline;
+}
+
+.contents {
+  padding: 2%;
+}
+small {
+  margin-top: 1px;
+  margin-left: 7%;
+  color: #b5b3b3;
+}
+strong {
+  background-color: #d6d6d6;
+}
+.border {
+  padding-bottom: 1%;
+}
+.last-col {
+  margin-right: 0;
+  padding-right: 0;
+}
+.heading {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: -4%;
+}
+.container {
+  display: block;
+  margin: 3% 25%;
+  max-width: 50%;
+}
+a:hover {
+  text-decoration: none;
+}
+.convert {
+  font-size: 1.5rem;
+}
+.degree {
+  font-size: 45px;
+}
+#today {
+  font-size: 3rem;
+}
