@@ -12,10 +12,6 @@ h3 {
 hr {
   display: inline;
 }
-
-.contents {
-  padding: 2%;
-}
 small {
   margin-top: 1px;
   margin-left: 7%;
@@ -23,6 +19,9 @@ small {
 }
 strong {
   background-color: #d6d6d6;
+}
+.contents {
+  padding: 2%;
 }
 .border {
   padding-bottom: 1%;
@@ -38,8 +37,12 @@ strong {
 }
 .container {
   display: block;
-  margin: 3% 25%;
+  margin: 3% 25% 1% 25%;
   max-width: 50%;
+}
+}
+.degree {
+  font-size: 45px;
 }
 a:hover {
   text-decoration: none;
@@ -47,8 +50,10 @@ a:hover {
 .convert {
   font-size: 1.5rem;
 }
-.degree {
-  font-size: 45px;
+.github-link a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 #today {
   font-size: 3rem;
