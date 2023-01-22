@@ -36,14 +36,17 @@ function showTemp(response) {
   let resTemp = Math.round(response.data.temperature.current);
   let icon = response.data.condition.icon_url;
   let con = response.data.condition.description;
+  let humidity = response.data.temperature.humidity;
 
   let todayElement = document.querySelector("#today");
   let conElement = document.querySelector("#cond");
   let iconElement = document.querySelector("#icon");
+  let humidityElement = document.querySelector("#humidity");
 
   todayElement.innerHTML = resTemp;
   conElement.innerHTML = con;
   iconElement.src = icon;
+  humidityElement.innerHTML = humidity;
 }
 
 function search(event) {
@@ -93,3 +96,19 @@ let celsius = document.querySelector("#celsius");
 
 celsius.addEventListener("click", convertToC);
 fahrenheit.addEventListener("click", convertToF);
+
+// default
+
+let city = "lisbon";
+
+function defaultCity(city) {
+  let apiKey = "t59d1foebd7d6a037ffd3299548b5a20";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showTemp);
+
+  let currCity = document.querySelector("#currCity");
+
+  currCity.innerHTML = cptlFrstWrd(city);
+}
+defaultCity(city);
