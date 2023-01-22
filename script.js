@@ -32,7 +32,6 @@ function cptlFrstWrd(word) {
   return capitalWord;
 }
 function showTemp(response) {
-  console.log(response);
   let resTemp = Math.round(response.data.temperature.current);
   let icon = response.data.condition.icon_url;
   let con = response.data.condition.description;
