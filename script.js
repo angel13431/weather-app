@@ -1,28 +1,28 @@
-//Date & Time
-function dateAndTime(time) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+// //Date & Time
+// function dateAndTime(time) {
+//   let days = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
 
-  let day = days[time.getDay()];
-  let hour = time.getHours();
-  let minute = time.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
-  let now = `${day} ${hour}:${minute}`;
+//   let day = days[time.getDay()];
+//   let hour = time.getHours();
+//   let minute = time.getMinutes();
+//   if (minute < 10) {
+//     minute = `0${minute}`;
+//   }
+//   let now = `${day} ${hour}:${minute}`;
 
-  let date = document.querySelector("#date");
-  date.innerHTML = now;
-}
-let rightNow = new Date();
-dateAndTime(rightNow);
+//   let date = document.querySelector("#date");
+//   date.innerHTML = now;
+// }
+// let rightNow = new Date();
+// dateAndTime(rightNow);
 
 //Search Engine
 function cptlFrstWrd(word) {
@@ -33,16 +33,17 @@ function cptlFrstWrd(word) {
 }
 function showTemp(response) {
   console.log(response);
-  let resTemp = Math.round(response.data.main.temp);
-  let todayTempMin = Math.round(response.data.main.temp_min);
-  let todayTempMax = Math.round(response.data.main.temp_max);
-  let todayElement = document.querySelector("#today");
-  let todayMin = document.querySelector("#today-min");
-  let todayMax = document.querySelector("#today-max");
+  let resTemp = Math.round(response.data.temperature.current);
+  let icon = response.data.condition.icon_url;
+  let con = response.data.condition.description;
 
-  todayMin.innerHTML = todayTempMin;
-  todayMax.innerHTML = todayTempMax;
+  let todayElement = document.querySelector("#today");
+  let conElement = document.querySelector("#cond");
+  let iconElement = document.querySelector("#icon");
+
   todayElement.innerHTML = resTemp;
+  conElement.innerHTML = con;
+  iconElement.src = icon;
 }
 
 function search(event) {
@@ -51,8 +52,8 @@ function search(event) {
   let city = document.querySelector(".search-city");
   let cityTitle = cptlFrstWrd(city.value);
 
-  let apiKey = "8c78e9e7e9928cd1a2a6f923072c3dec";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityTitle}&appid=${apiKey}&units=metric`;
+  let apiKey = "t59d1foebd7d6a037ffd3299548b5a20";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityTitle}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemp);
 
