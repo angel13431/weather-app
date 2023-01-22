@@ -36,17 +36,17 @@ function showTemp(response) {
   let resTemp = Math.round(response.data.temperature.current);
   let icon = response.data.condition.icon_url;
   let con = response.data.condition.description;
-  let humidity = response.data.temperature.humidity;
+  let wind = response.data.wind.speed;
 
   let todayElement = document.querySelector("#today");
   let conElement = document.querySelector("#cond");
   let iconElement = document.querySelector("#icon");
-  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
 
   todayElement.innerHTML = resTemp;
   conElement.innerHTML = con;
   iconElement.src = icon;
-  humidityElement.innerHTML = humidity;
+  windElement.innerHTML = wind;
 }
 
 function search(event) {
